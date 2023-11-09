@@ -7,13 +7,19 @@ WORKDIR /webserver
 COPY ./package.json ./
 # COPY ./tsconfig.json ./
 
-RUN npm cache clean --force
-RUN npm install --force --unsafe-perm
+# RUN npm cache clean --force
+# RUN npm install --force --unsafe-perm
+
+# COPY ./ ./
+
+# RUN npm run build
+
+# CMD ["npm", "run", "start"]
+
+RUN yarn install --ignore-engines
 
 COPY ./ ./
 
-RUN npm run build
-
-CMD ["npm", "run", "start"]
+RUN yarn build
 
 EXPOSE 3000
