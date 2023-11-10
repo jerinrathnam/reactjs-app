@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/node/public_html
+npm install
+pm2 start index.js

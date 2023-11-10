@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /home/node/public_html
+pm2 stop index.js || true
